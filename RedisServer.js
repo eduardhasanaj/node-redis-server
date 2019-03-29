@@ -121,11 +121,13 @@ class RedisServer extends events.EventEmitter {
     const flags = [];
 
     if (config.port != null) {
-      flags.push(`--port ${config.port}`);
+      flags.push('--port');
+      flags.push(conf.port.toString())
     }
 
     if (config.slaveof != null) {
-      flags.push(`--slaveof ${config.slaveof}`);
+      flags.push('--slaveof');
+      flags.push(config.slaveof);
     }
 
     return flags;
