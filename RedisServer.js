@@ -122,7 +122,7 @@ class RedisServer extends events.EventEmitter {
 
     if (config.port != null) {
       flags.push('--port');
-      flags.push(conf.port.toString())
+      flags.push(config.port.toString())
     }
 
     if (config.slaveof != null) {
